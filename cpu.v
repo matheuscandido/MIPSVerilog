@@ -1,4 +1,7 @@
-module cpu();
+module cpu(
+	input clk,
+	output addr
+);
 
 
 
