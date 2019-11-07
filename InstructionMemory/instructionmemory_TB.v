@@ -15,7 +15,6 @@ initial begin
 	clk = 0;
 	pc = 0;
 	
-	$display("PC \tInstructionOut");
 	#2000 $stop;
 end
 
@@ -23,8 +22,6 @@ always #50 clk = ~clk;
 
 always @ (posedge clk) begin
 	pc = pc + 1;
-	
-	$display("%d \t%b", pc, instructionOut);
 end
 	
 endmodule
