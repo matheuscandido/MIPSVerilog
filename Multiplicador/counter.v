@@ -16,11 +16,12 @@ module counter
 			k<=0;
 			else
 			if(load)
-			cont <= dload;
+			cont <= 4'b1000;
 			else
 			if(cont != 0)
 			cont <= cont - 4'b0001;
 			else
+			if(cont==0)
 			k<=1;
 		 end
 	  

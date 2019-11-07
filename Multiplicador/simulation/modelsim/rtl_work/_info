@@ -1,0 +1,144 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/simulation/modelsim
+vacc
+Z1 !s110 1573090463
+!i10b 1
+!s100 [dV8;Dk3FHG=P>=61RfiD2
+IKBKm;K[9H?i2e<izU8zMY1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1572563111
+8C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/acc.v
+FC:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/acc.v
+L0 4
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1573090463.000000
+!s107 C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/acc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador|C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/acc.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador
+Z7 tCvgOpt 0
+vadder
+R1
+!i10b 1
+!s100 ?5X[hCQR<bE=QLNPUSU:?0
+IUMcHAgoWhRCVJS^ao6EaQ2
+R2
+R0
+w1572568890
+8C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/adder.v
+FC:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/adder.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador|C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/adder.v|
+!i113 1
+R5
+R6
+R7
+vcontrolMul
+R1
+!i10b 1
+!s100 F1R`60[]7]DZFf^VPDXPI2
+IhgX<C4k6j1FV<kdaD2h6S1
+R2
+R0
+w1573088723
+8C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/controlMul.v
+FC:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/controlMul.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/controlMul.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador|C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/controlMul.v|
+!i113 1
+R5
+R6
+R7
+ncontrol@mul
+vcounter
+R1
+!i10b 1
+!s100 9XC:<Hj;J>:g0e7jRNi8l2
+IA]]bkhV;CfKhS4bgUMLl53
+R2
+R0
+w1573090376
+8C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/counter.v
+FC:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/counter.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador|C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/counter.v|
+!i113 1
+R5
+R6
+R7
+vmultiplicador
+R1
+!i10b 1
+!s100 ;@:CaR?T^g[a=aO]YYP0n3
+I=EaU`fLJ=<8fhh>[QN2QC0
+R2
+R0
+w1573084531
+8C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v
+FC:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador|C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v|
+!i113 1
+R5
+R6
+R7
+vmultiplicador_TB
+R1
+!i10b 1
+!s100 N[ZoY^Y][RZMfRK3^:bJo1
+IBWhzR_1;Za_1=0z^@z7;i3
+R2
+R0
+w1573090445
+8C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador_TB.v
+FC:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador_TB.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador|C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador_TB.v|
+!i113 1
+R5
+R6
+R7
+nmultiplicador_@t@b

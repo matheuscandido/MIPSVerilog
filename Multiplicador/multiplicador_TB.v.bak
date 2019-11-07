@@ -1,0 +1,59 @@
+`timescale 1ns/100ps
+
+module multiplicador_TB;
+
+reg clk, rst, St;
+reg [3:0] muln,mulr;//multiplicando,multiplicador
+wire  done1;
+wire [7:0] produto;
+
+multiplicador DUT(
+.clk(clk),
+.rst(rst),
+.St(St),
+.muln(muln),
+.mulr(mulr),
+.done(done1),
+.produto(produto)
+
+
+);
+
+
+always
+	
+		begin
+			clk <= 1;
+			#25;
+			clk <= 0;
+			#25;
+		end
+		
+		
+		initial
+		begin
+		
+		rst <= 1;
+		#50;
+		rst <= 0;
+		#50;
+		
+		end
+		
+		
+			initial
+	
+		begin
+			St <= 0;
+			muln <=8'hff;
+			mulr <=8'hff;
+			#50;
+			St <= 1;
+			#50;
+		
+			#2000 $stop;
+		end	
+		
+	endmodule	
+		
+		

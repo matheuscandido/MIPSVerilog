@@ -1,5 +1,5 @@
 Analysis & Synthesis report for multiplicador
-Thu Oct 31 21:47:35 2019
+Wed Nov 06 22:34:16 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -10,7 +10,21 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |multiplicador|controlMul:control|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: controlMul:control
+ 13. Parameter Settings for User Entity Instance: counter:cont
+ 14. Parameter Settings for User Entity Instance: acc:acumulador
+ 15. Parameter Settings for User Entity Instance: adder:addr
+ 16. Port Connectivity Checks: "acc:acumulador"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -36,22 +50,22 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Oct 31 21:47:35 2019           ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov 06 22:34:16 2019       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; multiplicador                               ;
 ; Top-level Entity Name              ; multiplicador                               ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 31                                          ;
+;     Total combinational functions  ; 29                                          ;
+;     Dedicated logic registers      ; 19                                          ;
+; Total registers                    ; 19                                          ;
+; Total pins                         ; 20                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -150,11 +164,207 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+; counter.v                        ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/counter.v       ;         ;
+; controlMul.v                     ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/controlMul.v    ;         ;
+; adder.v                          ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/adder.v         ;         ;
+; acc.v                            ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/acc.v           ;         ;
+; multiplicador.v                  ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 31        ;
+;                                             ;           ;
+; Total combinational functions               ; 29        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 9         ;
+;     -- 3 input functions                    ; 16        ;
+;     -- <=2 input functions                  ; 4         ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 25        ;
+;     -- arithmetic mode                      ; 4         ;
+;                                             ;           ;
+; Total registers                             ; 19        ;
+;     -- Dedicated logic registers            ; 19        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 20        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; rst~input ;
+; Maximum fan-out                             ; 20        ;
+; Total fan-out                               ; 180       ;
+; Average fan-out                             ; 2.05      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+---------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name               ; Entity Name   ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+---------------+--------------+
+; |multiplicador             ; 29 (0)              ; 19 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 20   ; 0            ; 0          ; |multiplicador                    ; multiplicador ; work         ;
+;    |acc:acumulador|        ; 11 (11)             ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |multiplicador|acc:acumulador     ; acc           ; work         ;
+;    |adder:addr|            ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |multiplicador|adder:addr         ; adder         ; work         ;
+;    |controlMul:control|    ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |multiplicador|controlMul:control ; controlMul    ; work         ;
+;    |counter:cont|          ; 9 (9)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |multiplicador|counter:cont       ; counter       ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------+
+; State Machine - |multiplicador|controlMul:control|state ;
++----------+----------+----------+----------+-------------+
+; Name     ; state.S3 ; state.S2 ; state.S1 ; state.S0    ;
++----------+----------+----------+----------+-------------+
+; state.S0 ; 0        ; 0        ; 0        ; 0           ;
+; state.S1 ; 0        ; 0        ; 1        ; 1           ;
+; state.S2 ; 0        ; 1        ; 0        ; 1           ;
+; state.S3 ; 1        ; 0        ; 0        ; 1           ;
++----------+----------+----------+----------+-------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; controlMul:control|state~5            ; Lost fanout        ;
+; controlMul:control|state~6            ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 19    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 14    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 9     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |multiplicador|acc:acumulador|accOut[0] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |multiplicador|acc:acumulador|accOut[4] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |multiplicador|counter:cont|cont[3]     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controlMul:control ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; S0             ; 0     ; Signed Integer                         ;
+; S1             ; 1     ; Signed Integer                         ;
+; S2             ; 2     ; Signed Integer                         ;
+; S3             ; 3     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:cont ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WIDTH          ; 4     ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: acc:acumulador ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; N              ; 9     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: adder:addr ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; WIDTH          ; 4     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "acc:acumulador"                                                                                                             ;
++--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                   ;
++--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; accOut ; Output ; Warning  ; Output or bidir port (9 bits) is wider than the port expression (8 bits) it drives; bit(s) "accOut[8..8]" have no fanouts ;
++--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 20                          ;
+; cycloneiii_ff         ; 19                          ;
+;     CLR               ; 6                           ;
+;     ENA               ; 1                           ;
+;     ENA CLR           ; 8                           ;
+;     plain             ; 4                           ;
+; cycloneiii_lcell_comb ; 29                          ;
+;     arith             ; 4                           ;
+;         3 data inputs ; 4                           ;
+;     normal            ; 25                          ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 12                          ;
+;         4 data inputs ; 9                           ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.80                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -163,28 +373,40 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Thu Oct 31 21:47:26 2019
+    Info: Processing started: Wed Nov 06 22:34:05 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off multiplicador -c multiplicador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file counter.v
     Info (12023): Found entity 1: counter File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/counter.v Line: 2
-Error (10170): Verilog HDL syntax error at controlMul.v(101) near text: "end";  expecting "endcase". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/controlMul.v Line: 101
-Error (10170): Verilog HDL syntax error at controlMul.v(102) near text: "end"; "end" without "begin" . Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/controlMul.v Line: 102
-Error (10170): Verilog HDL syntax error at controlMul.v(114) near text: "end"; "end" without "begin" . Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/controlMul.v Line: 114
-Error (10170): Verilog HDL syntax error at controlMul.v(116) near text: "endmodule";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/controlMul.v Line: 116
-Info (12021): Found 0 design units, including 0 entities, in source file controlmul.v
+Info (12021): Found 1 design units, including 1 entities, in source file controlmul.v
+    Info (12023): Found entity 1: controlMul File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/controlMul.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file adder.v
     Info (12023): Found entity 1: adder File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/adder.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file acc.v
     Info (12023): Found entity 1: acc File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/acc.v Line: 4
-Error (10170): Verilog HDL syntax error at multiplicador.v(15) near text: "control";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v Line: 15
-Error (10112): Ignored design unit "multiplicador" at multiplicador.v(2) due to previous errors File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v Line: 2
-Info (12021): Found 0 design units, including 0 entities, in source file multiplicador.v
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 6 errors, 1 warning
-    Error: Peak virtual memory: 4711 megabytes
-    Error: Processing ended: Thu Oct 31 21:47:35 2019
-    Error: Elapsed time: 00:00:09
-    Error: Total CPU time (on all processors): 00:00:21
+Info (12021): Found 1 design units, including 1 entities, in source file multiplicador.v
+    Info (12023): Found entity 1: multiplicador File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file multiplicador_tb.v
+    Info (12023): Found entity 1: multiplicador_TB File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador_TB.v Line: 3
+Info (12127): Elaborating entity "multiplicador" for the top level hierarchy
+Info (12128): Elaborating entity "controlMul" for hierarchy "controlMul:control" File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v Line: 26
+Info (12128): Elaborating entity "counter" for hierarchy "counter:cont" File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v Line: 36
+Info (12128): Elaborating entity "acc" for hierarchy "acc:acumulador" File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v Line: 50
+Info (12128): Elaborating entity "adder" for hierarchy "adder:addr" File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v Line: 58
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 51 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 31 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4770 megabytes
+    Info: Processing ended: Wed Nov 06 22:34:16 2019
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:23
 
 

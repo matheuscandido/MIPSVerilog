@@ -31,6 +31,7 @@ module controlMul
 					if (m)
 					begin
 						state <= S2;
+						
 					end
 					else
 					begin
@@ -58,20 +59,26 @@ module controlMul
 	begin
 			case (state)
 				S0:
-					
+					if(St)
 					begin
-						load <= 1'b0;
+						load <= 1'b1;
+						ad <= 1'b0;
+						done <= 1'b0;
+						Sh <= 1'b0;
+					end
+					else
+					begin
+						load <= 1'b1;
 						ad <= 1'b0;
 						done <= 1'b0;
 						Sh <= 1'b0;
 					end
 					
 				S1:
-					
-					if (St)
+				   if(m)
 					begin
-						load <= 1'b1;
-						ad <= 1'b0;
+						load <= 1'b0;
+						ad <= 1'b1;
 						done <= 1'b0;
 						Sh <= 1'b0;
 					end
@@ -84,22 +91,14 @@ module controlMul
 					end
 				
 				S2:
-					if (m)
-					begin
-						load <= 1'b0;
-						ad <= 1'b1;
-						done <= 1'b0;
-						Sh <= 1'b1;
-					end
-					else
 					begin
 						load <= 1'b0;
 						ad <= 1'b0;
 						done <= 1'b0;
 						Sh <= 1'b1;
 					end
-					end
-					end
+					
+					
 				S3:
 					
 					begin

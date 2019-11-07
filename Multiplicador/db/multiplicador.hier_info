@@ -1,0 +1,136 @@
+|multiplicador
+clk => clk.IN3
+rst => rst.IN3
+St => St.IN1
+mndo[0] => mndo[0].IN2
+mndo[1] => mndo[1].IN2
+mndo[2] => mndo[2].IN2
+mndo[3] => mndo[3].IN2
+mdor[0] => mdor[0].IN1
+mdor[1] => mdor[1].IN1
+mdor[2] => mdor[2].IN1
+mdor[3] => mdor[3].IN1
+produto[0] << acc:acumulador.accOut
+produto[1] << acc:acumulador.accOut
+produto[2] << acc:acumulador.accOut
+produto[3] << acc:acumulador.accOut
+produto[4] << produto[4].DB_MAX_OUTPUT_PORT_TYPE
+produto[5] << produto[5].DB_MAX_OUTPUT_PORT_TYPE
+produto[6] << produto[6].DB_MAX_OUTPUT_PORT_TYPE
+produto[7] << produto[7].DB_MAX_OUTPUT_PORT_TYPE
+done1 << controlMul:control.done
+
+
+|multiplicador|controlMul:control
+clk => state~2.DATAIN
+St => Selector0.IN3
+St => state.DATAB
+rst => state~4.DATAIN
+m => ad.DATAB
+k => Selector1.IN3
+k => Selector0.IN1
+done <= done.DB_MAX_OUTPUT_PORT_TYPE
+Sh <= Sh.DB_MAX_OUTPUT_PORT_TYPE
+load <= load.DB_MAX_OUTPUT_PORT_TYPE
+ad <= ad.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplicador|counter:cont
+clk => cont[0].CLK
+clk => cont[1].CLK
+clk => cont[2].CLK
+clk => cont[3].CLK
+clk => k~reg0.CLK
+rst => k~reg0.ACLR
+rst => cont[3].ENA
+rst => cont[2].ENA
+rst => cont[1].ENA
+rst => cont[0].ENA
+load => cont.OUTPUTSELECT
+load => cont.OUTPUTSELECT
+load => cont.OUTPUTSELECT
+load => cont.OUTPUTSELECT
+load => k~reg0.ENA
+dload[0] => ~NO_FANOUT~
+dload[1] => ~NO_FANOUT~
+dload[2] => ~NO_FANOUT~
+dload[3] => ~NO_FANOUT~
+k <= k~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplicador|acc:acumulador
+clk => m_out~reg0.CLK
+clk => accOut[0]~reg0.CLK
+clk => accOut[1]~reg0.CLK
+clk => accOut[2]~reg0.CLK
+clk => accOut[3]~reg0.CLK
+clk => accOut[4]~reg0.CLK
+clk => accOut[5]~reg0.CLK
+clk => accOut[6]~reg0.CLK
+clk => accOut[7]~reg0.CLK
+clk => accOut[8]~reg0.CLK
+Sh => accOut.OUTPUTSELECT
+Sh => accOut.OUTPUTSELECT
+Sh => accOut.OUTPUTSELECT
+Sh => accOut.OUTPUTSELECT
+Sh => accOut.OUTPUTSELECT
+Sh => accOut.OUTPUTSELECT
+Sh => accOut.OUTPUTSELECT
+Sh => accOut.OUTPUTSELECT
+Sh => accOut.OUTPUTSELECT
+load => accOut.OUTPUTSELECT
+load => accOut.OUTPUTSELECT
+load => accOut.OUTPUTSELECT
+load => accOut.OUTPUTSELECT
+ad => accOut.OUTPUTSELECT
+ad => accOut.OUTPUTSELECT
+ad => accOut.OUTPUTSELECT
+ad => accOut.OUTPUTSELECT
+ad => accOut.OUTPUTSELECT
+rst => accOut[0]~reg0.ACLR
+rst => accOut[1]~reg0.ACLR
+rst => accOut[2]~reg0.ACLR
+rst => accOut[3]~reg0.ACLR
+rst => accOut[4]~reg0.ACLR
+rst => accOut[5]~reg0.ACLR
+rst => accOut[6]~reg0.ACLR
+rst => accOut[7]~reg0.ACLR
+rst => accOut[8]~reg0.ACLR
+rst => m_out~reg0.ENA
+adderInput[0] => accOut.DATAB
+adderInput[1] => accOut.DATAB
+adderInput[2] => accOut.DATAB
+adderInput[3] => accOut.DATAB
+adderInput[4] => accOut.DATAB
+multiplicador[0] => accOut.DATAB
+multiplicador[1] => accOut.DATAB
+multiplicador[2] => accOut.DATAB
+multiplicador[3] => accOut.DATAB
+m_out <= m_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+accOut[0] <= accOut[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+accOut[1] <= accOut[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+accOut[2] <= accOut[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+accOut[3] <= accOut[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+accOut[4] <= accOut[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+accOut[5] <= accOut[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+accOut[6] <= accOut[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+accOut[7] <= accOut[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+accOut[8] <= accOut[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplicador|adder:addr
+dataa[0] => Add0.IN4
+dataa[1] => Add0.IN3
+dataa[2] => Add0.IN2
+dataa[3] => Add0.IN1
+datab[0] => Add0.IN8
+datab[1] => Add0.IN7
+datab[2] => Add0.IN6
+datab[3] => Add0.IN5
+result[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+result[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
