@@ -3,14 +3,13 @@ module multiplicador(
 
 input clk, rst, St,
 input [3:0] mndo, mdor,
-output reg [7:0] produto,
-output reg done
+output  [7:0] produto,
+output done1
 
 );
 
 wire m,k,load,ad,Sh;
-wire [3:0] soma;
-wire 
+wire [4:0] soma;
 
 controlMul control(
 
@@ -19,7 +18,7 @@ controlMul control(
 .rst(rst), 
 .m(m),// sinal do acumulador
 .k(k),//sinal do counter
-.done(done),
+.done(done1),
 .Sh(Sh), 
 .load(load), 
 .ad(ad)

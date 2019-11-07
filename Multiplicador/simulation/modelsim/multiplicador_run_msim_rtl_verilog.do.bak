@@ -1,0 +1,13 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador {C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/counter.v}
+vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador {C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/controlMul.v}
+vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador {C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/adder.v}
+vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador {C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/acc.v}
+vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador {C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v}
+
