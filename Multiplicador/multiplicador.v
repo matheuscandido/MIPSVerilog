@@ -2,14 +2,14 @@
 module multiplicador(
 
 input clk, rst, St,
-input [3:0] mndo, mdor,
-output  [7:0] produto,
+input [15:0] mndo, mdor,
+output  [31:0] produto,
 output done1
 
 );
 
 wire m,k,load,ad,Sh;
-wire [4:0] soma;
+wire [16:0] soma;
 
 controlMul control(
 
@@ -30,7 +30,6 @@ counter cont(
   .clk(clk), 
   .rst(rst), 
   .load(load), 
-  .dload(mndo),
   .k(k)
   
   );
@@ -52,7 +51,7 @@ acc	acumulador(
 adder addr(
 
 	.dataa(mndo),
-	.datab(produto[7:4]),
+	.datab(produto[31:16]),
 	.result(soma)
 	
 	);

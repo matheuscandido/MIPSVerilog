@@ -3,9 +3,9 @@
 module multiplicador_TB;
 
 reg clk, rst, St;
-reg [3:0] mndo,mdor;//multiplicando,multiplicador
+reg [15:0] mndo,mdor;//multiplicando,multiplicador
 wire  done1;
-wire [7:0] produto;
+wire [31:0] produto;
 
 multiplicador DUT(
 .clk(clk),

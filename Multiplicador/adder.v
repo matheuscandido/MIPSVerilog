@@ -2,7 +2,7 @@
 // Unsigned Adder
 
 module adder
-#(parameter WIDTH=4)
+#(parameter WIDTH=16)
 (
 	input [WIDTH-1:0] dataa,
 	input [WIDTH-1:0] datab,

@@ -12,76 +12,76 @@
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador {C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/counter.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:34:23 on Nov 06,2019
+# Start time: 18:33:18 on Nov 15,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador" C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/counter.v 
 # -- Compiling module counter
 # 
 # Top level modules:
 # 	counter
-# End time: 22:34:23 on Nov 06,2019, Elapsed time: 0:00:00
+# End time: 18:33:18 on Nov 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador {C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/controlMul.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:34:23 on Nov 06,2019
+# Start time: 18:33:18 on Nov 15,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador" C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/controlMul.v 
 # -- Compiling module controlMul
 # 
 # Top level modules:
 # 	controlMul
-# End time: 22:34:23 on Nov 06,2019, Elapsed time: 0:00:00
+# End time: 18:33:18 on Nov 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador {C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/adder.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:34:23 on Nov 06,2019
+# Start time: 18:33:18 on Nov 15,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador" C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/adder.v 
 # -- Compiling module adder
 # 
 # Top level modules:
 # 	adder
-# End time: 22:34:23 on Nov 06,2019, Elapsed time: 0:00:00
+# End time: 18:33:18 on Nov 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador {C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/acc.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:34:23 on Nov 06,2019
+# Start time: 18:33:18 on Nov 15,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador" C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/acc.v 
 # -- Compiling module acc
 # 
 # Top level modules:
 # 	acc
-# End time: 22:34:23 on Nov 06,2019, Elapsed time: 0:00:00
+# End time: 18:33:18 on Nov 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador {C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:34:23 on Nov 06,2019
+# Start time: 18:33:18 on Nov 15,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador" C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v 
 # -- Compiling module multiplicador
 # 
 # Top level modules:
 # 	multiplicador
-# End time: 22:34:23 on Nov 06,2019, Elapsed time: 0:00:00
+# End time: 18:33:18 on Nov 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador {C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador_TB.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:34:23 on Nov 06,2019
+# Start time: 18:33:18 on Nov 15,2019
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador" C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador_TB.v 
 # -- Compiling module multiplicador_TB
 # 
 # Top level modules:
 # 	multiplicador_TB
-# End time: 22:34:23 on Nov 06,2019, Elapsed time: 0:00:00
+# End time: 18:33:18 on Nov 15,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  multiplicador_TB
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" multiplicador_TB 
-# Start time: 22:34:23 on Nov 06,2019
+# Start time: 18:33:18 on Nov 15,2019
 # Loading work.multiplicador_TB
 # Loading work.multiplicador
 # Loading work.controlMul
 # Loading work.counter
 # Loading work.acc
 # Loading work.adder
-# ** Warning: (vsim-3015) C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v(39): [PCDPC] - Port size (9) does not match connection size (8) for port 'accOut'. The port definition is at: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/acc.v(11).
+# ** Warning: (vsim-3015) C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v(38): [PCDPC] - Port size (33) does not match connection size (32) for port 'accOut'. The port definition is at: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/acc.v(11).
 #    Time: 0 ps  Iteration: 0  Instance: /multiplicador_TB/DUT/acumulador File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/acc.v
 # 
 # add wave *
@@ -93,5 +93,5 @@
 # ** Note: $stop    : C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador_TB.v(55)
 #    Time: 2100 ns  Iteration: 0  Instance: /multiplicador_TB
 # Break in Module multiplicador_TB at C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador_TB.v line 55
-# End time: 22:35:49 on Nov 06,2019, Elapsed time: 0:01:26
+# End time: 18:33:45 on Nov 15,2019, Elapsed time: 0:00:27
 # Errors: 0, Warnings: 1

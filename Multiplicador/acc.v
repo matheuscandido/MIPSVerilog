@@ -2,11 +2,11 @@
 // One-bit wide, N-bit long shift register
 
 module acc
-#(parameter N=9)
+#(parameter N=33)
 (
 	input clk,Sh,load,ad,rst,
-	input [4:0] adderInput,
-	input [3:0] multiplicador,
+	input [16:0] adderInput,
+	input [15:0] multiplicador,
 	output reg m_out,
 	output reg [N-1:0] accOut
 );
@@ -16,7 +16,7 @@ module acc
 	always @ (posedge clk or posedge rst)
 	begin
 	if(rst)
-	accOut <= 9'b0;
+	accOut <= 33'b0;
 		else
 			begin
 			
@@ -24,12 +24,12 @@ module acc
 			
 			if(load)
 			begin
-			accOut[3:0] <= multiplicador;
+			accOut[15:0] <= multiplicador;
 			end
 			
 			if(ad)
 			begin
-			accOut[N-1:4] <= adderInput;
+			accOut[N-1:16] <= adderInput;
 			end
 			
 			if(Sh)

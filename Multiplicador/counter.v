@@ -1,8 +1,7 @@
 	 
 module counter
-#(parameter WIDTH = 4)
+#(parameter WIDTH = 6)
 (  input clk, rst, load, 
-	input [WIDTH-1:0] dload,
 	output reg k
 );
 	 
@@ -16,10 +15,10 @@ module counter
 			k<=0;
 			else
 			if(load)
-			cont <= 4'b1000;
+			cont <= 6'b100_000;
 			else
 			if(cont != 0)
-			cont <= cont - 4'b0001;
+			cont <= cont - 6'b000_001;
 			else
 			if(cont==0)
 			k<=1;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for multiplicador
-Wed Nov 06 22:34:16 2019
+Fri Nov 15 18:33:08 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -50,16 +50,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 06 22:34:16 2019       ;
+; Analysis & Synthesis Status        ; Successful - Fri Nov 15 18:33:08 2019       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; multiplicador                               ;
 ; Top-level Entity Name              ; multiplicador                               ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 31                                          ;
-;     Total combinational functions  ; 29                                          ;
-;     Dedicated logic registers      ; 19                                          ;
-; Total registers                    ; 19                                          ;
-; Total pins                         ; 20                                          ;
+; Total logic elements               ; 68                                          ;
+;     Total combinational functions  ; 66                                          ;
+;     Dedicated logic registers      ; 45                                          ;
+; Total registers                    ; 45                                          ;
+; Total pins                         ; 68                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -190,30 +190,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 31        ;
+; Estimated Total logic elements              ; 68        ;
 ;                                             ;           ;
-; Total combinational functions               ; 29        ;
+; Total combinational functions               ; 66        ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 9         ;
-;     -- 3 input functions                    ; 16        ;
-;     -- <=2 input functions                  ; 4         ;
+;     -- 4 input functions                    ; 4         ;
+;     -- 3 input functions                    ; 50        ;
+;     -- <=2 input functions                  ; 12        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 25        ;
-;     -- arithmetic mode                      ; 4         ;
+;     -- normal mode                          ; 45        ;
+;     -- arithmetic mode                      ; 21        ;
 ;                                             ;           ;
-; Total registers                             ; 19        ;
-;     -- Dedicated logic registers            ; 19        ;
+; Total registers                             ; 45        ;
+;     -- Dedicated logic registers            ; 45        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 20        ;
+; I/O pins                                    ; 68        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
-; Maximum fan-out node                        ; rst~input ;
-; Maximum fan-out                             ; 20        ;
-; Total fan-out                               ; 180       ;
-; Average fan-out                             ; 2.05      ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 45        ;
+; Total fan-out                               ; 465       ;
+; Average fan-out                             ; 1.88      ;
 +---------------------------------------------+-----------+
 
 
@@ -222,11 +222,11 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name               ; Entity Name   ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+---------------+--------------+
-; |multiplicador             ; 29 (0)              ; 19 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 20   ; 0            ; 0          ; |multiplicador                    ; multiplicador ; work         ;
-;    |acc:acumulador|        ; 11 (11)             ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |multiplicador|acc:acumulador     ; acc           ; work         ;
-;    |adder:addr|            ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |multiplicador|adder:addr         ; adder         ; work         ;
-;    |controlMul:control|    ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |multiplicador|controlMul:control ; controlMul    ; work         ;
-;    |counter:cont|          ; 9 (9)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |multiplicador|counter:cont       ; counter       ; work         ;
+; |multiplicador             ; 66 (1)              ; 45 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 68   ; 0            ; 0          ; |multiplicador                    ; multiplicador ; work         ;
+;    |acc:acumulador|        ; 35 (35)             ; 34 (34)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |multiplicador|acc:acumulador     ; acc           ; work         ;
+;    |adder:addr|            ; 17 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |multiplicador|adder:addr         ; adder         ; work         ;
+;    |controlMul:control|    ; 3 (3)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |multiplicador|controlMul:control ; controlMul    ; work         ;
+;    |counter:cont|          ; 10 (10)             ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |multiplicador|counter:cont       ; counter       ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -260,25 +260,25 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 19    ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 14    ;
+; Total registers                              ; 45    ;
+; Number of registers using Synchronous Clear  ; 1     ;
+; Number of registers using Synchronous Load   ; 6     ;
+; Number of registers using Asynchronous Clear ; 38    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 9     ;
+; Number of registers using Clock Enable       ; 39    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |multiplicador|acc:acumulador|accOut[0] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |multiplicador|acc:acumulador|accOut[4] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |multiplicador|counter:cont|cont[3]     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |multiplicador|acc:acumulador|accOut[15] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |multiplicador|acc:acumulador|accOut[16] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |multiplicador|counter:cont|cont[5]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 
 
 +-----------------------------------------------------------------+
@@ -299,7 +299,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+----------------------------------+
 ; Parameter Name ; Value ; Type                             ;
 +----------------+-------+----------------------------------+
-; WIDTH          ; 4     ; Signed Integer                   ;
+; WIDTH          ; 6     ; Signed Integer                   ;
 +----------------+-------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -309,7 +309,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+------------------------------------+
 ; Parameter Name ; Value ; Type                               ;
 +----------------+-------+------------------------------------+
-; N              ; 9     ; Signed Integer                     ;
+; N              ; 33    ; Signed Integer                     ;
 +----------------+-------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -319,18 +319,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------+
 ; Parameter Name ; Value ; Type                           ;
 +----------------+-------+--------------------------------+
-; WIDTH          ; 4     ; Signed Integer                 ;
+; WIDTH          ; 16    ; Signed Integer                 ;
 +----------------+-------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "acc:acumulador"                                                                                                             ;
-+--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                                                                   ;
-+--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
-; accOut ; Output ; Warning  ; Output or bidir port (9 bits) is wider than the port expression (8 bits) it drives; bit(s) "accOut[8..8]" have no fanouts ;
-+--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "acc:acumulador"                                                                                                                 ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                       ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; accOut ; Output ; Warning  ; Output or bidir port (33 bits) is wider than the port expression (32 bits) it drives; bit(s) "accOut[32..32]" have no fanouts ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -338,23 +338,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 20                          ;
-; cycloneiii_ff         ; 19                          ;
-;     CLR               ; 6                           ;
+; boundary_port         ; 68                          ;
+; cycloneiii_ff         ; 45                          ;
+;     CLR               ; 5                           ;
+;     CLR SCLR          ; 1                           ;
 ;     ENA               ; 1                           ;
-;     ENA CLR           ; 8                           ;
-;     plain             ; 4                           ;
-; cycloneiii_lcell_comb ; 29                          ;
-;     arith             ; 4                           ;
-;         3 data inputs ; 4                           ;
-;     normal            ; 25                          ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 12                          ;
-;         4 data inputs ; 9                           ;
+;     ENA CLR           ; 32                          ;
+;     ENA SLD           ; 6                           ;
+; cycloneiii_lcell_comb ; 66                          ;
+;     arith             ; 21                          ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 16                          ;
+;     normal            ; 45                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 34                          ;
+;         4 data inputs ; 4                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.80                        ;
+; Max LUT depth         ; 3.60                        ;
+; Average LUT depth     ; 2.09                        ;
 +-----------------------+-----------------------------+
 
 
@@ -373,7 +376,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Wed Nov 06 22:34:05 2019
+    Info: Processing started: Fri Nov 15 18:32:58 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off multiplicador -c multiplicador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -391,22 +394,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file multipl
     Info (12023): Found entity 1: multiplicador_TB File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador_TB.v Line: 3
 Info (12127): Elaborating entity "multiplicador" for the top level hierarchy
 Info (12128): Elaborating entity "controlMul" for hierarchy "controlMul:control" File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v Line: 26
-Info (12128): Elaborating entity "counter" for hierarchy "counter:cont" File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v Line: 36
-Info (12128): Elaborating entity "acc" for hierarchy "acc:acumulador" File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v Line: 50
-Info (12128): Elaborating entity "adder" for hierarchy "adder:addr" File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v Line: 58
+Info (12128): Elaborating entity "counter" for hierarchy "counter:cont" File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v Line: 35
+Info (12128): Elaborating entity "acc" for hierarchy "acc:acumulador" File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v Line: 49
+Info (12128): Elaborating entity "adder" for hierarchy "adder:addr" File: C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador.v Line: 57
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 51 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 31 logic cells
+Info (21057): Implemented 136 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 35 input pins
+    Info (21059): Implemented 33 output pins
+    Info (21061): Implemented 68 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4770 megabytes
-    Info: Processing ended: Wed Nov 06 22:34:16 2019
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Peak virtual memory: 4769 megabytes
+    Info: Processing ended: Fri Nov 15 18:33:08 2019
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:20
 
 
