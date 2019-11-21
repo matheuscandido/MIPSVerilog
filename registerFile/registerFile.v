@@ -39,8 +39,36 @@ reg [31:0] t0,t1,t2,t3,t4,t5,t6,t7;//registers $t0 to $t7
 		end
 		
 	else
-	 if(!write)//read data from registers s0 to s7 and t0 to t7 to send out to registers A and B
-	 begin
+	 if(write)//write data from write back stage to target register address
+		 begin
+			case(Adr_register_to_save)
+				
+					0 : s0 <= data_from_ctrl;
+					1 : s1 <= data_from_ctrl;
+					2 : s2 <= data_from_ctrl;
+					3 : s3 <= data_from_ctrl;
+					4 : s4 <= data_from_ctrl;
+					5 : s5 <= data_from_ctrl;
+					6 : s6 <= data_from_ctrl;
+					7 : s7 <= data_from_ctrl;
+					
+					8  : t0 <= data_from_ctrl;
+					9  : t1 <= data_from_ctrl;
+					10 : t2 <= data_from_ctrl;
+					11 : t3 <= data_from_ctrl;
+					12 : t4 <= data_from_ctrl;
+					13 : t5 <= data_from_ctrl;
+					14 : t6 <= data_from_ctrl;
+					15 : t7 <= data_from_ctrl;
+		  endcase
+		 end
+	end
+	
+	
+	always@(*)
+	begin
+	//if(!write)//read data from registers s0 to s7 and t0 to t7 to send out to registers A and B
+	// begin
 	 
 		 case(Adr_register_to_A)
 				
@@ -85,30 +113,7 @@ reg [31:0] t0,t1,t2,t3,t4,t5,t6,t7;//registers $t0 to $t7
 				15 : data_to_B <= t7;
 			
 	  endcase
-	 end
-	 else
-	 if(write)//write data from write back stage to target register address
-		 begin
-			case(Adr_register_to_save)
-				
-					0 : s0 <= data_from_ctrl;
-					1 : s1 <= data_from_ctrl;
-					2 : s2 <= data_from_ctrl;
-					3 : s3 <= data_from_ctrl;
-					4 : s4 <= data_from_ctrl;
-					5 : s5 <= data_from_ctrl;
-					6 : s6 <= data_from_ctrl;
-					7 : s7 <= data_from_ctrl;
-					
-					8  : t0 <= data_from_ctrl;
-					9  : t1 <= data_from_ctrl;
-					10 : t2 <= data_from_ctrl;
-					11 : t3 <= data_from_ctrl;
-					12 : t4 <= data_from_ctrl;
-					13 : t5 <= data_from_ctrl;
-					14 : t6 <= data_from_ctrl;
-					15 : t7 <= data_from_ctrl;
-		  endcase
-		 end
+	// end
 	end
+	
 endmodule

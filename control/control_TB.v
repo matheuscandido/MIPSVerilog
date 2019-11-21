@@ -1,12 +1,12 @@
 module control_TB;
 
-reg clk;
+
 reg [31:0]instruction_memory;
 wire [20:0]control_signal;
 
 
 control DUT(
-.clk(clk),
+
 .instruction_memory(instruction_memory),
 .control_signal(control_signal)
 
@@ -15,14 +15,7 @@ control DUT(
 
 always
 	
-		begin
-			clk <= 1;
-			#25;
-			clk <= 0;
-			#25;
-		end
 		
-		initial 
 		begin
 		instruction_memory <= 32'b000001_00001_00010_01000_00000_110010;//mul
 		
