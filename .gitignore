@@ -23,7 +23,7 @@ timing
 *_generation_script*
 *_inst.vhd
 *.bak
-*.cmp
+#*.cmp
 *.done
 *.eqn
 *.hex
