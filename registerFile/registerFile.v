@@ -9,10 +9,16 @@ output reg [31:0] data_to_A,data_to_B	//data to send from register file to regis
 
 );
 
+/*
+TODO:
+Adicionar defaults em condições não checadas
+*/
+
+
 reg [31:0] s0,s1,s2,s3,s4,s5,s6,s7;//registers $s0 to $s7
 reg [31:0] t0,t1,t2,t3,t4,t5,t6,t7;//registers $t0 to $t7
 
- always @(negedge clk)//register file works in descending edge in order to work in 5 clock pulses
+always @(negedge clk)//register file works in descending edge in order to work in 5 clock pulses
                       //as it is in MIPS architecture 
 	begin
 	
