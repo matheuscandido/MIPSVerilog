@@ -1,4 +1,4 @@
-module mux( A, B, sel, X);
+	module mux( A, B, sel, X);
  
 input wire A, B; // As entradas sao A e B
 input wire sel; // O sinal de selecao é S
