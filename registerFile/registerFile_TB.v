@@ -1,3 +1,4 @@
+`timescale 1ns/100ps
 module registerFile_TB;
 
 reg clk,rst;
@@ -51,15 +52,19 @@ always
 		initial
 	
 		begin
+		   #50
 			write <= 1'b1;//write mode
-			Adr_register_to_save <= 4'd5;//selects $s4 register
-			data_from_ctrl <= 32'd555;//saves in $s4 register
-			Adr_register_to_save <= 4'd3;
-			data_from_ctrl <= 32'd333;
-			write <=1'b0;//read mode
-			#500
+			#50
+			Adr_register_to_save <= 4'd5;//selects $s5 register
+			data_from_ctrl <= 32'd555;//saves in $s5 register
+			#50
+			Adr_register_to_save <= 4'd3;//saves in $s3 register
+			data_from_ctrl <= 32'd333;//saves in $s3 register
+			
+			#50
 			
 			Adr_register_to_A <= 4'd5;//output expected of 555 in data_to_A
+			#500
 			Adr_register_to_B <= 4'd3;//output expected of 333 in data_to_b
 			#50
 			
