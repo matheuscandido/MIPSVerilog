@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/simulation/modelsim
 vacc
-Z1 !s110 1573853598
+Z1 !s110 1574391363
 !i10b 1
 !s100 nFIe;h22WB06h<;UDDg1j0
 ID<FI7Rh_XFOPBzbQnOi0N1
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1573853598.000000
+Z4 !s108 1574391363.000000
 !s107 C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/acc.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador|C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/acc.v|
 !i113 1
@@ -120,7 +120,7 @@ R5
 R6
 R7
 vmultiplicador_TB
-R1
+!s110 1574391364
 !i10b 1
 !s100 5Bgn@LNoPCAaO1^5C79Ca3
 I]^BfMCzIbl?Nml0_0EYE43
