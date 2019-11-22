@@ -1,5 +1,4 @@
 module control(
-input clk,
 input [31:0]instruction_memory,
 output reg [20:0]control_signal
 
@@ -15,9 +14,9 @@ output reg [20:0]control_signal
  
 
 //signals table for the control signal
-//control_signal[17:14] is registerSource_A;
-//control_signal[13:10] is registerSource_B;
-//control_signal[9:6] is register_Destiny;
+//control_signal[20:16] is registerSource_A;
+//control_signal[15:11] is registerSource_B;
+//control_signal[10:6] is register_Destiny;
 //control_signal[5] is mux (B/IMM) registers 0 for extend, 1 for B
 //control_signal[4] is mux (ALU/MUL) 0 for ALU, 1 for MUL
 //control_signal[3] is data memory, 0 for read, 1 for write
@@ -38,7 +37,7 @@ reg memory_rd_wr;//read/write for data memory
 reg mux_write_back;//write back mux
 reg [1:0] alu_op;//operation selected in ALU
 
-always@(posedge clk)
+always@(instruction_memory)
 begin
 	
 	if(instruction_memory[31:26] == 6'b000001)// this if checks if the instruction is of type R
@@ -153,7 +152,7 @@ begin
 			registerSource_A = instruction_memory[25:21];
 			registerSource_B = 0;
 			register_Destiny = instruction_memory[20:16];
-			mux_B_IMM = 1'b1;
+			mux_B_IMM = 1'b0;//selects immediate register
 			mux_ALU_MUL = 1'b0;
 			memory_rd_wr = 1'b0;
 			mux_write_back = 1'b1;//selects data from memory and saves in register
@@ -168,7 +167,7 @@ begin
 			registerSource_A = instruction_memory[25:21];
 			registerSource_B = instruction_memory[20:16];
 			register_Destiny = 0;
-			mux_B_IMM = 1'b1;
+			mux_B_IMM = 1'b0;//selects immediate register
 			mux_ALU_MUL = 1'b0;
 			memory_rd_wr = 1'b1;//write to memory
 			mux_write_back = 1'b0;
