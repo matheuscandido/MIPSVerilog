@@ -1,10 +1,9 @@
-module reg_int (
-clk,
-reset,
-data_in,
-data_out
+module Register #(parameter DATA_WIDTH=32)(
+	clk,
+	reset,
+	data_in,
+	data_out
 );
-parameter DATA_WIDTH = 32 ;
 
 input clk;
 input reset;
