@@ -102,3 +102,5 @@ run -all
 # ** Note: $stop    : C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador_TB.v(55)
 #    Time: 2100 ns  Iteration: 0  Instance: /multiplicador_TB
 # Break in Module multiplicador_TB at C:/Users/user/Documents/GitHub/MIPSVerilog/Multiplicador/multiplicador_TB.v line 55
+# End time: 00:23:18 on Nov 22,2019, Elapsed time: 0:27:14
+# Errors: 0, Warnings: 2
