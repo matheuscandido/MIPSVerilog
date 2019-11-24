@@ -4,7 +4,7 @@ input clk,rst,
 input write,	//write = 1(write in adress) ,write = 0(read from register address)
 input [3:0] Adr_register_to_save,	//input register address from ctrl block
 input [31:0] data_from_ctrl,	//input data to save in target register
-input [3:0] Adr_register_to_A,Adr_register_to_B,	//address of registers selected by the control block
+input [4:0] Adr_register_to_A,Adr_register_to_B,	//address of registers selected by the control block
 output reg [31:0] data_to_A,data_to_B	//data to send from register file to registers A and B
 
 );
@@ -66,6 +66,7 @@ always @(negedge clk)//register file works in descending edge in order to work i
 					13 : t5 <= data_from_ctrl;
 					14 : t6 <= data_from_ctrl;
 					15 : t7 <= data_from_ctrl;
+					default: data_to_A <= s0;//reads $s0 if address is invalid
 		  endcase
 		 end
 	end
@@ -95,7 +96,7 @@ always @(negedge clk)//register file works in descending edge in order to work i
 					13 : data_to_A <= t5;
 					14 : data_to_A <= t6;
 					15 : data_to_A <= t7;
-				
+					default:data_to_A <= 32'b0;
 		 endcase  
 		 
 	  case(Adr_register_to_B)
@@ -117,7 +118,7 @@ always @(negedge clk)//register file works in descending edge in order to work i
 				13 : data_to_B <= t5;
 				14 : data_to_B <= t6;
 				15 : data_to_B <= t7;
-			
+				default:data_to_B <= 32'b0;
 	  endcase
 	// end
 	end

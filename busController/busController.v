@@ -17,10 +17,9 @@ begin
 	end
 
 	else
-	if(chipSelect == 1'b0)
 	begin
 
-		data_out_internal = external_memory;
+		data_out_internal = 32'bz;
 		
 	end
 	

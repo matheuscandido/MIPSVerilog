@@ -13,20 +13,28 @@ output reg [21:0]control_signal
 //instruction_memory[31:26] is the instructions type
  
 
-//signals table for the control signal
-//control_signal[21] is for write in register file, 1 for write
-//control_signal[20:16] is registerSource_A;
-//control_signal[15:11] is registerSource_B;
-//control_signal[10:6] is register_Destiny;
-//control_signal[5] is mux (B/IMM) registers 0 for extend, 1 for B
-//control_signal[4] is mux (ALU/MUL) 0 for ALU, 1 for MUL
-//control_signal[3] is data memory, 0 for read, 1 for write
-//control_signal[2] is write back mux(D/M) 0 for D, 1 for M
-//control_signal[1:0] is for ALU, selects operation in ALU
+
+//instruction decode
+//control_signal[21:17] is registerSource_A; 
+//control_signal[16:12] is registerSource_B; 
+
+//execute
+//control_signal[11] is mux (B/IMM) registers 0 for extend, 1 for B (mux 1) 
+//control_signal[10] is mux (ALU/MUL) 0 for ALU, 1 for MUL (mux 2) 
+//control_signal[9:8] is for ALU, selects operation in ALU 
 //00 for add
 //01 for sub
 //10 for and
 //11 for or
+
+
+//memory
+//control_signal[7] is data memory, 0 for read, 1 for write 
+
+//write back
+//control_signal[6] is write back mux(D/M) 0 for D, 1 for M 
+//control_signal[5:1] is register_Destiny; 
+//control_signal[0] is for write in register file, 1 for write (mux 3)
 
 reg write_rf;
 reg [4:0] registerSource_A;//address of source register in A
@@ -56,7 +64,7 @@ begin
 			memory_rd_wr = 1'b0;
 			mux_write_back = 1'b0;
 			alu_op = 2'b00;
-			control_signal = {write_rf,registerSource_A,registerSource_B,register_Destiny,mux_B_IMM,mux_ALU_MUL,memory_rd_wr,mux_write_back,alu_op};  
+			control_signal = {registerSource_A,registerSource_B,mux_B_IMM,mux_ALU_MUL,alu_op,memory_rd_wr,mux_write_back,register_Destiny,write_rf};  
 			
 			end
 		32://Add
@@ -70,7 +78,7 @@ begin
 			memory_rd_wr = 1'b0;
 			mux_write_back = 1'b0;
 			alu_op = 2'b00;
-			control_signal = {write_rf,registerSource_A,registerSource_B,register_Destiny,mux_B_IMM,mux_ALU_MUL,memory_rd_wr,mux_write_back,alu_op};  
+			control_signal = {registerSource_A,registerSource_B,mux_B_IMM,mux_ALU_MUL,alu_op,memory_rd_wr,mux_write_back,register_Destiny,write_rf};  
 		
 			end
 		34://sub
@@ -84,7 +92,7 @@ begin
 			memory_rd_wr = 1'b0;
 			mux_write_back = 1'b0;
 			alu_op = 2'b01;
-			control_signal = {write_rf,registerSource_A,registerSource_B,register_Destiny,mux_B_IMM,mux_ALU_MUL,memory_rd_wr,mux_write_back,alu_op}; 
+			control_signal = {registerSource_A,registerSource_B,mux_B_IMM,mux_ALU_MUL,alu_op,memory_rd_wr,mux_write_back,register_Destiny,write_rf};  
 			
 			end
 		36://and
@@ -98,7 +106,7 @@ begin
 			memory_rd_wr = 1'b0;
 			mux_write_back = 1'b0;
 			alu_op = 2'b10;
-			control_signal = {write_rf,registerSource_A,registerSource_B,register_Destiny,mux_B_IMM,mux_ALU_MUL,memory_rd_wr,mux_write_back,alu_op};
+			control_signal = {registerSource_A,registerSource_B,mux_B_IMM,mux_ALU_MUL,alu_op,memory_rd_wr,mux_write_back,register_Destiny,write_rf}; 
 			
 			end
 		37://or
@@ -112,7 +120,7 @@ begin
 			memory_rd_wr = 1'b0;
 			mux_write_back = 1'b0;
 			alu_op = 2'b11;
-			control_signal = {write_rf,registerSource_A,registerSource_B,register_Destiny,mux_B_IMM,mux_ALU_MUL,memory_rd_wr,mux_write_back,alu_op};
+			control_signal = {registerSource_A,registerSource_B,mux_B_IMM,mux_ALU_MUL,alu_op,memory_rd_wr,mux_write_back,register_Destiny,write_rf}; 
 			
 			end
 		50://mul
@@ -126,12 +134,12 @@ begin
 			memory_rd_wr = 1'b0;
 			mux_write_back = 1'b0;
 			alu_op = 2'b00;//as alu is not used values defaults to 0
-			control_signal = {write_rf,registerSource_A,registerSource_B,register_Destiny,mux_B_IMM,mux_ALU_MUL,memory_rd_wr,mux_write_back,alu_op}; 
+			control_signal = {registerSource_A,registerSource_B,mux_B_IMM,mux_ALU_MUL,alu_op,memory_rd_wr,mux_write_back,register_Destiny,write_rf};  
 			
 			end
 		default://nop
 			begin
-			write_rf = 1'b1;
+			write_rf = 1'b0;
 			registerSource_A = 5'b00000;
 			registerSource_B = 5'b00000;
 			register_Destiny = 5'b00000;
@@ -140,7 +148,7 @@ begin
 			memory_rd_wr = 1'b0;
 			mux_write_back = 1'b0;
 			alu_op = 2'b00;
-			control_signal = {write_rf,registerSource_A,registerSource_B,register_Destiny,mux_B_IMM,mux_ALU_MUL,memory_rd_wr,mux_write_back,alu_op};  
+			control_signal = {registerSource_A,registerSource_B,mux_B_IMM,mux_ALU_MUL,alu_op,memory_rd_wr,mux_write_back,register_Destiny,write_rf};   
 			end
 		
 		endcase
@@ -159,7 +167,7 @@ begin
 			memory_rd_wr = 1'b0;
 			mux_write_back = 1'b1;//selects data from memory and saves in register
 			alu_op = 2'b00;//as alu is not used values defaults to 0
-			control_signal = {write_rf,registerSource_A,registerSource_B,register_Destiny,mux_B_IMM,mux_ALU_MUL,memory_rd_wr,mux_write_back,alu_op}; 
+			control_signal = {registerSource_A,registerSource_B,mux_B_IMM,mux_ALU_MUL,alu_op,memory_rd_wr,mux_write_back,register_Destiny,write_rf}; 
 		
 		end
 		else
@@ -174,10 +182,24 @@ begin
 			memory_rd_wr = 1'b1;//write to memory
 			mux_write_back = 1'b0;
 			alu_op = 2'b00;
-			control_signal = {write_rf,registerSource_A,registerSource_B,register_Destiny,mux_B_IMM,mux_ALU_MUL,memory_rd_wr,mux_write_back,alu_op}; 
+			control_signal = {registerSource_A,registerSource_B,mux_B_IMM,mux_ALU_MUL,alu_op,memory_rd_wr,mux_write_back,register_Destiny,write_rf};  
 		
 		end
-
+		else
+		begin
+		//defaults to NOP
+		
+			write_rf = 1'b0;
+			registerSource_A = 5'b00000;
+			registerSource_B = 5'b00000;
+			register_Destiny = 5'b00000;
+			mux_B_IMM = 1'b0;
+			mux_ALU_MUL = 1'b0;
+			memory_rd_wr = 1'b0;
+			mux_write_back = 1'b0;
+			alu_op = 2'b00;
+			control_signal = {registerSource_A,registerSource_B,mux_B_IMM,mux_ALU_MUL,alu_op,memory_rd_wr,mux_write_back,register_Destiny,write_rf};   
+		end
 
 end 
 

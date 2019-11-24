@@ -12,7 +12,7 @@ output reg [DATA_WIDTH-1:0] data_out ;
 
 
 always @(posedge clk or posedge reset) begin
-	if (reset) data_out <= 32'b0;
+	if (reset) data_out <= 0;
 	else if (clk) begin
 		data_out <= data_in;
 	end

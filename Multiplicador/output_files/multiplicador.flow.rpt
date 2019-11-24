@@ -1,5 +1,5 @@
 Flow report for multiplicador
-Fri Nov 15 18:33:08 2019
+Fri Nov 22 22:49:27 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Nov 15 18:33:08 2019       ;
+; Flow Status                        ; Successful - Fri Nov 22 22:49:27 2019       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; multiplicador                               ;
 ; Top-level Entity Name              ; multiplicador                               ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/15/2019 18:32:59 ;
+; Start date & time ; 11/22/2019 22:49:18 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; multiplicador       ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id       ;
 +--------------------------------------+----------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID                ; 9218724121310.157385357902604          ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID                ; 9218724121310.157447375806952          ; --            ; --          ; --               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; multiplicador_TB ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; multiplicador_TB                       ; --            ; --          ; eda_simulation   ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation   ;
@@ -103,8 +103,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4769 MB             ; 00:00:20                           ;
-; Total                ; 00:00:10     ; --                      ; --                  ; 00:00:20                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4770 MB             ; 00:00:19                           ;
+; Total                ; 00:00:10     ; --                      ; --                  ; 00:00:19                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

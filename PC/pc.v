@@ -9,7 +9,7 @@ module pc(next, rst, outputData);
 
 	always @ (posedge next or posedge rst) begin
 		if(rst) outputData = 0;
-		else outputData = outputData + 1;
+		else outputData = outputData + 10'd1;
 	end
 
 endmodule	
