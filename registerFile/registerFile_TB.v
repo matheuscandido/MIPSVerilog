@@ -5,7 +5,7 @@ reg clk,rst;
 reg write;	//write = 1(write in adress) ,write = 0(read from register address)
 reg [3:0] Adr_register_to_save;	//input register address from ctrl block
 reg [31:0] data_from_ctrl;	//input data to save in target register
-reg [3:0] Adr_register_to_A,Adr_register_to_B;	//address of registers selected by the control block
+reg [4:0] Adr_register_to_A,Adr_register_to_B;	//address of registers selected by the control block
 wire [31:0] data_to_A,data_to_B;	//data to send from register file to registers A and B
 
 
@@ -41,9 +41,9 @@ always
 		begin
 		
 		rst <= 1;
-		#20;
+		#60;
 		rst <= 0;
-		#20;
+		#60;
 		
 		end
 		
@@ -54,15 +54,15 @@ always
 		begin
 		   #50
 			write <= 1'b1;//write mode
-			#50
+			#500
 			Adr_register_to_save <= 4'd5;//selects $s5 register
 			data_from_ctrl <= 32'd555;//saves in $s5 register
-			#50
+			#500
 			Adr_register_to_save <= 4'd3;//saves in $s3 register
 			data_from_ctrl <= 32'd333;//saves in $s3 register
 			
-			#50
-			
+			#500
+			write <= 1'b0;
 			Adr_register_to_A <= 4'd5;//output expected of 555 in data_to_A
 			#500
 			Adr_register_to_B <= 4'd3;//output expected of 333 in data_to_b

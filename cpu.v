@@ -1,10 +1,11 @@
 module cpu(
 	input  clk,rst,
-	input [31:0] external_memory,
+	input clkMul,
+	input [31:0] external_memory
 	//output reg chip_select,wr,
 	//output [31:0] out_B2,
 	//output reg [9:0]addr,
-	output reg done1
+	//output reg done1
 );
 
 wire [31:0] out_inst_ctrl;// output of instruction memory to control
@@ -44,7 +45,7 @@ alu ALU(
 //multiplicador
 multiplicador mult(
 
-.clk(clk), 
+.clk(clkMul), 
 .rst(rst), 
 .St(1'b1),
 .mndo(out_A), 
@@ -59,7 +60,7 @@ multiplicador mult(
 //decoder
 addressdecoder decoder(
 
-	.in(out_D), 
+	.in(out_D2), 
 	.cs(out_cs)
 
 );

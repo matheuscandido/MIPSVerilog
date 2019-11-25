@@ -41,6 +41,20 @@ module datamemory(
 	
 	reg[numBits-1:0] M [0: (1 << $clog2(numLinhas)) -1];
 	
+	initial 
+	begin
+	
+	M[0] = 32'd2001;
+	M[1] = 32'd4001;
+	M[2] = 32'd5001;
+	M[3] = 32'd3001;
+	
+	
+	end
+	
+	
+	
+	
 	always @(posedge clk) begin
 		if (rw) M[addr] = din;
 		else S_datamemory = M[addr];

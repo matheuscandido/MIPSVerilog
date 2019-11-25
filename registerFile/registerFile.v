@@ -15,6 +15,7 @@ Adicionar defaults em condições não checadas
 */
 
 
+
 reg [31:0] s0,s1,s2,s3,s4,s5,s6,s7;//registers $s0 to $s7
 reg [31:0] t0,t1,t2,t3,t4,t5,t6,t7;//registers $t0 to $t7
 
