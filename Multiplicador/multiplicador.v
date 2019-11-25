@@ -30,7 +30,8 @@ counter cont(
   .clk(clk), 
   .rst(rst), 
   .load(load), 
-  .k(k)
+  .k(k),
+  .done1(done1)
   
   );
   
@@ -45,7 +46,8 @@ acc	acumulador(
  .adderInput(soma),//sinal do adder
  .multiplicador(mdor),
  .m_out(m),
- .accOut(produto)
+ .accOut(produto),
+ .done(done1)
 ); 
 
 adder addr(

@@ -48,7 +48,7 @@ module controlMul
 					end
 				S3:
 					begin
-						state <= S3;
+						state <= S0;
 					end
 			endcase
 	end

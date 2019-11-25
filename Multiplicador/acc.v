@@ -4,7 +4,7 @@
 module acc
 #(parameter N=33)
 (
-	input clk,Sh,load,ad,rst,
+	input clk,Sh,load,ad,rst,done,
 	input [16:0] adderInput,
 	input [15:0] multiplicador,
 	output reg m_out,
@@ -35,6 +35,12 @@ module acc
 			if(Sh)
 			begin
 			accOut <= accOut >> 1;
+			end
+			
+			if(done)
+			begin
+			m_out <= accOut[0];
+			accOut <= 9'b0;
 			end
 			
 		end

@@ -1,7 +1,7 @@
 	 
 module counter
 #(parameter WIDTH = 6)
-(  input clk, rst, load, 
+(  input clk, rst, load,done1, 
 	output reg k
 );
 	 
@@ -12,6 +12,9 @@ module counter
 	 always@(posedge clk or posedge rst)
 		 begin
 		 if(rst)
+			k<=0;
+			else
+			if(done1)
 			k<=0;
 			else
 			if(load)
