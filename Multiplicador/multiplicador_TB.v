@@ -45,8 +45,8 @@ always
 	
 		begin
 			St <= 0;
-			mndo <=4'b1111;
-			mdor <=4'b1111;
+			mndo <=16'hffff;
+			mdor <=16'hffff;
 			#50;
 			St <= 1;
 			#50;

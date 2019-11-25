@@ -1,9 +1,9 @@
 module cpu(
 	input  clk,rst,
 	input clkMul,
-	input [31:0] external_memory
+	input [31:0] external_memory,
 	//output reg chip_select,wr,
-	//output [31:0] out_B2,
+	output [31:0] out_B2Saida
 	//output reg [9:0]addr,
 	//output reg done1
 );
@@ -33,7 +33,7 @@ wire [6:0] ctrl3;
 wire out_cs;
 
 //ALU
-
+assign out_B2Saida = out_B2;
 alu ALU(
 	 
 	 .A(out_A),

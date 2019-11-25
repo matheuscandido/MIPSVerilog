@@ -66,17 +66,17 @@ produto[28] << produto[28].DB_MAX_OUTPUT_PORT_TYPE
 produto[29] << produto[29].DB_MAX_OUTPUT_PORT_TYPE
 produto[30] << produto[30].DB_MAX_OUTPUT_PORT_TYPE
 produto[31] << produto[31].DB_MAX_OUTPUT_PORT_TYPE
-done1 << controlMul:control.done
+done1 << done1.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |multiplicador|controlMul:control
 clk => state~2.DATAIN
-St => Selector0.IN3
-St => state.DATAB
+St => Selector1.IN3
+St => Selector0.IN2
 rst => state~4.DATAIN
 m => ad.DATAB
-k => Selector1.IN3
-k => Selector0.IN1
+k => state.DATAB
+k => Selector1.IN1
 done <= done.DB_MAX_OUTPUT_PORT_TYPE
 Sh <= Sh.DB_MAX_OUTPUT_PORT_TYPE
 load <= load.DB_MAX_OUTPUT_PORT_TYPE
@@ -104,7 +104,14 @@ load => cont.OUTPUTSELECT
 load => cont.OUTPUTSELECT
 load => cont.OUTPUTSELECT
 load => cont.OUTPUTSELECT
-load => k~reg0.ENA
+load => k.OUTPUTSELECT
+done1 => k.OUTPUTSELECT
+done1 => cont.OUTPUTSELECT
+done1 => cont.OUTPUTSELECT
+done1 => cont.OUTPUTSELECT
+done1 => cont.OUTPUTSELECT
+done1 => cont.OUTPUTSELECT
+done1 => cont.OUTPUTSELECT
 k <= k~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -243,6 +250,39 @@ rst => accOut[30]~reg0.ACLR
 rst => accOut[31]~reg0.ACLR
 rst => accOut[32]~reg0.ACLR
 rst => m_out~reg0.ENA
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
+done => accOut.OUTPUTSELECT
 adderInput[0] => accOut.DATAB
 adderInput[1] => accOut.DATAB
 adderInput[2] => accOut.DATAB

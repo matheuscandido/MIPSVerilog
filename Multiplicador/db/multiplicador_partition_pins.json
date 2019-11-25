@@ -136,11 +136,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "mdor[0]",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "mdor[0]",
 					"strict" : false
 				},
 				{
